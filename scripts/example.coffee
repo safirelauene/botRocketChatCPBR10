@@ -10,7 +10,7 @@
 
 module.exports = (robot) ->
 
-  robot.hear /^(palestras|programação|cpbr|agenda)$/i, (res) ->
+  robot.hear /(palestras|programação|cpbr|agenda)$/i, (res) ->
     robot.http("http://campuse.ro/api/legacy/events/campus-party-brasil-2017/schedule")
       .get() (err, resp, body) ->
         data = JSON.parse body
